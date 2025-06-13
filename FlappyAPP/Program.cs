@@ -105,6 +105,6 @@ class Program
     {
         Console.Title = "FlappyAPP";
         Console.BackgroundColor = ConsoleColor.Cyan;
-        Console.ForegrosundColor = ConsoleColor.Black;
+        Console.ForegroundColor = ConsoleColor.Black;
         }
 }
