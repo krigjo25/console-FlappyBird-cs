@@ -19,14 +19,14 @@ class Program
 
     static void DrawGameArea(int row, int column, string Obstacle)
     {
+        
         int newColumn = 0;
         int n = column / 4;
         int CylinderRow = column / 12;
-        
         string newlineCharacter = "(space)";
-
         while (true)
         {
+            ConsoleConfig();
             for (int i = 0; i < row; i++)
             {
                 if (i == 0 || i == row - 1)
@@ -36,10 +36,10 @@ class Program
                 }
                 else if (i == 1 || i == row - 2)
                 {
-                    
+
                     bool boolean = n < 8 ? true : false;
 
-                   if (boolean && newColumn < CylinderRow - 1)
+                    if (boolean && newColumn < CylinderRow - 1)
                     {
                         newColumn++;
                     }
@@ -76,11 +76,12 @@ class Program
         }
     }
 
-    static void DrawCylinder(int row, int column, string Obstacle, bool boolean, int counter)
+    static void DrawCylinder(int row, int column, string Obstacle, bool boolean, int counter, ConsoleColor color = ConsoleColor.Green)
     {
         column--;
         const int n = 55;
         int CylinderColumn = 5;
+        Console.ForegroundColor = color;
 
         for (int i = 0; i < row; i++)
         {
@@ -101,5 +102,11 @@ class Program
             Console.Write("\n");
         }
     }
-}
 
+    static void ConsoleConfig()
+    {
+        Console.Title = "FlappyAPP";
+        Console.BackgroundColor = ConsoleColor.Cyan;
+        Console.ForegroundColor = ConsoleColor.Black;
+        }
+}
