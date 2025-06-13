@@ -19,11 +19,11 @@ class Program
 
     static void DrawGameArea(int row, int column, string Obstacle)
     {
-        
         int newColumn = 0;
         int n = column / 4;
         int CylinderRow = column / 12;
         string newlineCharacter = "(space)";
+
         while (true)
         {
             ConsoleConfig();
@@ -43,10 +43,8 @@ class Program
                     {
                         newColumn++;
                     }
-
                     DrawCylinder(CylinderRow, n, Obstacle, boolean, newColumn);
                 }
-
                 else
                 {
                     //  TODO: Add a Figure to the game area
